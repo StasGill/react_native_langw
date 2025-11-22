@@ -1,18 +1,46 @@
 import { useRouter } from "expo-router";
-import React from "react";
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import React, { useEffect } from "react";
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import LessonCard from "../../components/LessonCard";
 import XPDisplay from "../../components/XPDisplay";
 import { useTheme } from "../../contexts/ThemeContext";
-import { useAppSelector } from "../../store/hooks";
+import { polishUnits } from "../../data/polishLessons";
+import { polishUnitsUA } from "../../data/polishLessonsUA";
+import { useTranslation } from "../../hooks/useTranslation";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { setUnits } from "../../store/slices/lessonsSlice";
+import { setSourceLanguage } from "../../store/slices/userSlice";
 
 export default function LearnScreen() {
   const router = useRouter();
   const { colors } = useTheme();
+  const dispatch = useAppDispatch();
+  const t = useTranslation();
   const { units } = useAppSelector((state) => state.lessons);
   const { completedLessons, xp, level, streak } = useAppSelector(
     (state) => state.progress
   );
+  const { sourceLanguage } = useAppSelector((state) => state.user);
+
+  useEffect(() => {
+    if (sourceLanguage === "ua") {
+      dispatch(setUnits(polishUnitsUA));
+    } else {
+      dispatch(setUnits(polishUnits));
+    }
+  }, [sourceLanguage, dispatch]);
+
+  const toggleLanguage = () => {
+    const newLang = sourceLanguage === "en" ? "ua" : "en";
+    dispatch(setSourceLanguage(newLang));
+  };
 
   const isLessonUnlocked = (lessonId: string, requiredLessonId?: string) => {
     if (!requiredLessonId) return true;
@@ -37,11 +65,21 @@ export default function LearnScreen() {
         contentContainerStyle={styles.scrollContent}
       >
         <View style={styles.header}>
-          <Text style={[styles.title, { color: colors.text }]}>
-            🇵🇱 Learn Polish
-          </Text>
+          <View style={styles.headerTop}>
+            <Text style={[styles.title, { color: colors.text }]}>
+              🇵🇱 {t.learn.title}
+            </Text>
+            <TouchableOpacity
+              onPress={toggleLanguage}
+              style={styles.langButton}
+            >
+              <Text style={styles.langButtonText}>
+                {sourceLanguage === "en" ? "🇺🇸" : "🇺🇦"}
+              </Text>
+            </TouchableOpacity>
+          </View>
           <Text style={[styles.subtitle, { color: colors.textSecondary }]}>
-            Master Polish one lesson at a time
+            {t.learn.subtitle}
           </Text>
         </View>
 
@@ -50,8 +88,13 @@ export default function LearnScreen() {
         {units.map((unit) => (
           <View key={unit.id} style={styles.unit}>
             <View style={[styles.unitHeader, { backgroundColor: unit.color }]}>
-              <Text style={styles.unitTitle}>{unit.title}</Text>
-              <Text style={styles.unitDescription}>{unit.description}</Text>
+              <View style={styles.unitHeaderContent}>
+                <View style={styles.unitTextContainer}>
+                  <Text style={styles.unitTitle}>{unit.title}</Text>
+                  <Text style={styles.unitDescription}>{unit.description}</Text>
+                </View>
+                <Text style={styles.unitEmoji}>{unit.emoji}</Text>
+              </View>
             </View>
 
             <View style={styles.lessonsContainer}>
@@ -79,7 +122,7 @@ export default function LearnScreen() {
 
         <View style={styles.footer}>
           <Text style={[styles.footerText, { color: colors.textSecondary }]}>
-            Keep learning every day! 🚀
+            {t.learn.footer}
           </Text>
         </View>
       </ScrollView>
@@ -100,12 +143,25 @@ const styles = StyleSheet.create({
   header: {
     padding: 20,
     paddingTop: 10,
+  },
+  headerTop: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
+    width: "100%",
+    marginBottom: 8,
   },
   title: {
     fontSize: 32,
     fontWeight: "bold",
-    marginBottom: 8,
+  },
+  langButton: {
+    padding: 8,
+    backgroundColor: "rgba(0,0,0,0.05)",
+    borderRadius: 20,
+  },
+  langButtonText: {
+    fontSize: 24,
   },
   subtitle: {
     fontSize: 16,
@@ -119,6 +175,15 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginBottom: 20,
   },
+  unitHeaderContent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  unitTextContainer: {
+    flex: 1,
+    marginRight: 16,
+  },
   unitTitle: {
     fontSize: 24,
     fontWeight: "bold",
@@ -129,6 +194,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#FFF",
     opacity: 0.9,
+  },
+  unitEmoji: {
+    fontSize: 40,
   },
   lessonsContainer: {
     paddingHorizontal: 40,

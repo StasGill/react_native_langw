@@ -7,6 +7,7 @@ const initialState: UserProfile = {
   dailyGoal: 50,
   soundEnabled: true,
   notificationsEnabled: true,
+  sourceLanguage: "en",
 };
 
 const userSlice = createSlice({
@@ -22,9 +23,16 @@ const userSlice = createSlice({
     toggleNotifications: (state) => {
       state.notificationsEnabled = !state.notificationsEnabled;
     },
+    setSourceLanguage: (state, action: PayloadAction<"en" | "ua">) => {
+      state.sourceLanguage = action.payload;
+    },
   },
 });
 
-export const { updateProfile, toggleSound, toggleNotifications } =
-  userSlice.actions;
+export const {
+  updateProfile,
+  toggleSound,
+  toggleNotifications,
+  setSourceLanguage,
+} = userSlice.actions;
 export default userSlice.reducer;

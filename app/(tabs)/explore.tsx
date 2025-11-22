@@ -9,16 +9,22 @@ import {
   View,
 } from "react-native";
 import { useTheme } from "../../contexts/ThemeContext";
+import { polishUnits } from "../../data/polishLessons";
+import { polishUnitsUA } from "../../data/polishLessonsUA";
+import { useTranslation } from "../../hooks/useTranslation";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { setUnits } from "../../store/slices/lessonsSlice";
 import { resetProgress } from "../../store/slices/progressSlice";
+import { setSourceLanguage } from "../../store/slices/userSlice";
 
 export default function ProfileScreen() {
   const dispatch = useAppDispatch();
   const { colors, theme, toggleTheme } = useTheme();
+  const t = useTranslation();
   const { xp, level, streak, completedLessons } = useAppSelector(
     (state) => state.progress
   );
-  const { name } = useAppSelector((state) => state.user);
+  const { name, sourceLanguage } = useAppSelector((state) => state.user);
 
   const totalLessons = 8;
   const completionRate = Math.round(
@@ -26,8 +32,18 @@ export default function ProfileScreen() {
   );
 
   const handleReset = () => {
-    if (confirm("Are you sure you want to reset all progress?")) {
+    if (confirm(t.profile.confirmReset)) {
       dispatch(resetProgress());
+    }
+  };
+
+  const toggleLanguage = () => {
+    const newLang = sourceLanguage === "en" ? "ua" : "en";
+    dispatch(setSourceLanguage(newLang));
+    if (newLang === "ua") {
+      dispatch(setUnits(polishUnitsUA));
+    } else {
+      dispatch(setUnits(polishUnits));
     }
   };
 
@@ -40,16 +56,18 @@ export default function ProfileScreen() {
         contentContainerStyle={styles.scrollContent}
       >
         <View style={[styles.header, { backgroundColor: colors.primary }]}>
-          <Text style={styles.avatar}>👤</Text>
+          <Text style={styles.avatar}>👨‍💻</Text>
           <Text style={styles.name}>{name}</Text>
-          <Text style={styles.level}>Level {level}</Text>
+          <Text style={styles.level}>
+            {t.profile.level} {level}
+          </Text>
         </View>
 
         <View style={styles.statsGrid}>
           <View style={[styles.statCard, { backgroundColor: colors.surface }]}>
             <Text style={[styles.statValue, { color: colors.text }]}>{xp}</Text>
             <Text style={[styles.statLabel, { color: colors.textSecondary }]}>
-              Total XP
+              {t.profile.totalXp}
             </Text>
             <Text style={styles.statIcon}>⚡</Text>
           </View>
@@ -59,7 +77,7 @@ export default function ProfileScreen() {
               {streak}
             </Text>
             <Text style={[styles.statLabel, { color: colors.textSecondary }]}>
-              Day Streak
+              {t.profile.dayStreak}
             </Text>
             <Text style={styles.statIcon}>🔥</Text>
           </View>
@@ -69,7 +87,7 @@ export default function ProfileScreen() {
               {completedLessons.length}
             </Text>
             <Text style={[styles.statLabel, { color: colors.textSecondary }]}>
-              Lessons Done
+              {t.profile.lessonsDone}
             </Text>
             <Text style={styles.statIcon}>✅</Text>
           </View>
@@ -79,7 +97,7 @@ export default function ProfileScreen() {
               {completionRate}%
             </Text>
             <Text style={[styles.statLabel, { color: colors.textSecondary }]}>
-              Completion
+              {t.profile.completion}
             </Text>
             <Text style={styles.statIcon}>📊</Text>
           </View>
@@ -87,7 +105,7 @@ export default function ProfileScreen() {
 
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
-            Settings
+            {t.profile.settings}
           </Text>
 
           <View
@@ -98,11 +116,27 @@ export default function ProfileScreen() {
           >
             <View style={styles.settingRow}>
               <Text style={[styles.settingLabel, { color: colors.text }]}>
-                Dark Mode
+                {t.profile.darkMode}
               </Text>
               <Switch
                 value={theme === "dark"}
                 onValueChange={toggleTheme}
+                trackColor={{ false: colors.border, true: colors.primary }}
+                thumbColor="#FFF"
+              />
+            </View>
+
+            <View
+              style={[styles.divider, { backgroundColor: colors.border }]}
+            />
+
+            <View style={styles.settingRow}>
+              <Text style={[styles.settingLabel, { color: colors.text }]}>
+                {t.profile.sourceLanguage}
+              </Text>
+              <Switch
+                value={sourceLanguage === "ua"}
+                onValueChange={toggleLanguage}
                 trackColor={{ false: colors.border, true: colors.primary }}
                 thumbColor="#FFF"
               />
@@ -112,7 +146,7 @@ export default function ProfileScreen() {
 
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
-            Achievements
+            {t.profile.achievements}
           </Text>
 
           <View style={styles.achievementsGrid}>
@@ -125,7 +159,7 @@ export default function ProfileScreen() {
               <Text style={styles.achievementIcon}>🎯</Text>
               <View style={styles.achievementInfo}>
                 <Text style={[styles.achievementTitle, { color: colors.text }]}>
-                  First Lesson
+                  {t.profile.achievementsList.firstLesson.title}
                 </Text>
                 <Text
                   style={[
@@ -134,8 +168,8 @@ export default function ProfileScreen() {
                   ]}
                 >
                   {completedLessons.length > 0
-                    ? "Completed! ✓"
-                    : "Complete your first lesson"}
+                    ? t.profile.achievementsList.firstLesson.completed
+                    : t.profile.achievementsList.firstLesson.desc}
                 </Text>
               </View>
             </View>
@@ -149,7 +183,7 @@ export default function ProfileScreen() {
               <Text style={styles.achievementIcon}>🔥</Text>
               <View style={styles.achievementInfo}>
                 <Text style={[styles.achievementTitle, { color: colors.text }]}>
-                  Week Warrior
+                  {t.profile.achievementsList.weekWarrior.title}
                 </Text>
                 <Text
                   style={[
@@ -158,8 +192,11 @@ export default function ProfileScreen() {
                   ]}
                 >
                   {streak >= 7
-                    ? "Completed! ✓"
-                    : `Reach a 7-day streak (${streak}/7)`}
+                    ? t.profile.achievementsList.weekWarrior.completed
+                    : t.profile.achievementsList.weekWarrior.desc.replace(
+                        "7",
+                        `${streak}/7`
+                      )}
                 </Text>
               </View>
             </View>
@@ -173,7 +210,7 @@ export default function ProfileScreen() {
               <Text style={styles.achievementIcon}>🏆</Text>
               <View style={styles.achievementInfo}>
                 <Text style={[styles.achievementTitle, { color: colors.text }]}>
-                  Polish Master
+                  {t.profile.achievementsList.polishMaster.title}
                 </Text>
                 <Text
                   style={[
@@ -182,8 +219,11 @@ export default function ProfileScreen() {
                   ]}
                 >
                   {completedLessons.length === totalLessons
-                    ? "Completed! ✓"
-                    : `Complete all lessons (${completedLessons.length}/${totalLessons})`}
+                    ? t.profile.achievementsList.polishMaster.completed
+                    : t.profile.achievementsList.polishMaster.desc.replace(
+                        "all lessons",
+                        `(${completedLessons.length}/${totalLessons})`
+                      )}
                 </Text>
               </View>
             </View>
@@ -194,7 +234,7 @@ export default function ProfileScreen() {
           style={[styles.resetButton, { backgroundColor: colors.error }]}
           onPress={handleReset}
         >
-          <Text style={styles.resetButtonText}>Reset Progress</Text>
+          <Text style={styles.resetButtonText}>{t.profile.resetProgress}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -325,5 +365,9 @@ const styles = StyleSheet.create({
     color: "#FFF",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  divider: {
+    height: 1,
+    marginVertical: 12,
   },
 });

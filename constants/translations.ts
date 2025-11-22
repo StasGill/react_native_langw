@@ -1,0 +1,108 @@
+export const translations = {
+  en: {
+    learn: {
+      title: "Learn Polish",
+      subtitle: "Master Polish one lesson at a time",
+      footer: "Keep learning every day! 🚀",
+      tabTitle: "Learn",
+      xpDisplay: {
+        xp: "XP",
+        streak: "Day Streak",
+        level: "Level",
+      },
+    },
+    profile: {
+      title: "Profile",
+      level: "Level",
+      totalXp: "Total XP",
+      dayStreak: "Day Streak",
+      lessonsDone: "Lessons Done",
+      completion: "Completion",
+      settings: "Settings",
+      darkMode: "Dark Mode",
+      sourceLanguage: "Source Language (🇺🇦)",
+      achievements: "Achievements",
+      resetProgress: "Reset Progress",
+      confirmReset: "Are you sure you want to reset all progress?",
+      tabTitle: "Profile",
+      achievementsList: {
+        firstLesson: {
+          title: "First Lesson",
+          desc: "Complete your first lesson",
+          completed: "Completed! ✓",
+        },
+        weekWarrior: {
+          title: "Week Warrior",
+          desc: "Reach a 7-day streak",
+          completed: "Completed! ✓",
+        },
+        polishMaster: {
+          title: "Polish Master",
+          desc: "Complete all lessons",
+          completed: "Completed! ✓",
+        },
+      },
+    },
+    lesson: {
+      notFound: "Lesson not found",
+      complete: "Lesson Complete! 🎉",
+      correct: "Correct",
+      xpEarned: "XP Earned",
+      continue: "CONTINUE",
+      check: "CHECK",
+    },
+  },
+  ua: {
+    learn: {
+      title: "Вчити польську",
+      subtitle: "Вивчайте польську крок за кроком",
+      footer: "Продовжуйте вчитися щодня! 🚀",
+      tabTitle: "Вчити",
+      xpDisplay: {
+        xp: "XP",
+        streak: "Днів поспіль",
+        level: "Рівень",
+      },
+    },
+    profile: {
+      title: "Профіль",
+      level: "Рівень",
+      totalXp: "Всього XP",
+      dayStreak: "Днів поспіль",
+      lessonsDone: "Уроків пройдено",
+      completion: "Прогрес",
+      settings: "Налаштування",
+      darkMode: "Темна тема",
+      sourceLanguage: "Мова інтерфейсу (🇺🇦)",
+      achievements: "Досягнення",
+      resetProgress: "Скинути прогрес",
+      confirmReset: "Ви впевнені, що хочете скинути весь прогрес?",
+      tabTitle: "Профіль",
+      achievementsList: {
+        firstLesson: {
+          title: "Перший урок",
+          desc: "Пройдіть свій перший урок",
+          completed: "Виконано! ✓",
+        },
+        weekWarrior: {
+          title: "Воїн тижня",
+          desc: "Досягніть 7-денної серії",
+          completed: "Виконано! ✓",
+        },
+        polishMaster: {
+          title: "Майстер польської",
+          desc: "Пройдіть усі уроки",
+          completed: "Виконано! ✓",
+        },
+      },
+    },
+    lesson: {
+      notFound: "Урок не знайдено",
+      complete: "Урок завершено! 🎉",
+      correct: "Правильно",
+      xpEarned: "Отримано XP",
+      continue: "ПРОДОВЖИТИ",
+      check: "ПЕРЕВІРИТИ",
+    },
+  },
+};

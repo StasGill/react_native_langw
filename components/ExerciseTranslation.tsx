@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Colors } from "../constants/colors";
+import { useTheme } from "../contexts/ThemeContext";
+import { useTranslation } from "../hooks/useTranslation";
 import { playCorrectSound, playIncorrectSound } from "../utils/sounds";
 
 interface ExerciseTranslationProps {
@@ -19,6 +20,8 @@ export default function ExerciseTranslation({
   const [selectedWords, setSelectedWords] = useState<string[]>([]);
   const [availableWords, setAvailableWords] = useState<string[]>(words);
   const [hasAnswered, setHasAnswered] = useState(false);
+  const t = useTranslation();
+  const { colors } = useTheme();
 
   const handleWordPress = (word: string, fromSelected: boolean) => {
     if (hasAnswered) return;
@@ -53,57 +56,79 @@ export default function ExerciseTranslation({
 
   return (
     <View style={styles.container}>
-      <Text style={styles.question}>{question}</Text>
+      <View style={styles.content}>
+        <Text style={[styles.question, { color: colors.text }]}>
+          {question}
+        </Text>
 
-      <View
-        style={[
-          styles.answerBox,
-          hasAnswered &&
-            (selectedWords.join(" ") === correctAnswer
-              ? styles.correct
-              : styles.incorrect),
-        ]}
-      >
-        {selectedWords.length === 0 ? (
-          <Text style={styles.placeholder}>Tap words to build your answer</Text>
-        ) : (
-          <View style={styles.selectedWords}>
-            {selectedWords.map((word, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.selectedWord}
-                onPress={() => handleWordPress(word, true)}
-                disabled={hasAnswered}
-              >
-                <Text style={styles.selectedWordText}>{word}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        )}
-      </View>
+        <View
+          style={[
+            styles.answerBox,
+            { backgroundColor: colors.surface, borderColor: colors.border },
+            hasAnswered &&
+              (selectedWords.join(" ") === correctAnswer
+                ? {
+                    backgroundColor: "#D7FFD7",
+                    borderColor: colors.success,
+                  }
+                : {
+                    backgroundColor: "#FFD7D7",
+                    borderColor: colors.error,
+                  }),
+          ]}
+        >
+          {selectedWords.length === 0 ? (
+            <Text style={[styles.placeholder, { color: colors.textSecondary }]}>
+              Tap words to build your answer
+            </Text>
+          ) : (
+            <View style={styles.selectedWords}>
+              {selectedWords.map((word, index) => (
+                <TouchableOpacity
+                  key={index}
+                  style={[
+                    styles.selectedWord,
+                    { backgroundColor: colors.primary },
+                  ]}
+                  onPress={() => handleWordPress(word, true)}
+                  disabled={hasAnswered}
+                >
+                  <Text style={styles.selectedWordText}>{word}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+        </View>
 
-      <View style={styles.wordBank}>
-        {availableWords.map((word, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.word}
-            onPress={() => handleWordPress(word, false)}
-            disabled={hasAnswered}
-          >
-            <Text style={styles.wordText}>{word}</Text>
-          </TouchableOpacity>
-        ))}
+        <View style={styles.wordBank}>
+          {availableWords.map((word, index) => (
+            <TouchableOpacity
+              key={index}
+              style={[
+                styles.word,
+                { backgroundColor: colors.surface, borderColor: colors.border },
+              ]}
+              onPress={() => handleWordPress(word, false)}
+              disabled={hasAnswered}
+            >
+              <Text style={[styles.wordText, { color: colors.text }]}>
+                {word}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
 
       <TouchableOpacity
         style={[
           styles.checkButton,
-          selectedWords.length === 0 && styles.checkButtonDisabled,
+          { backgroundColor: colors.primary },
+          selectedWords.length === 0 && { backgroundColor: colors.locked },
         ]}
         onPress={handleCheck}
         disabled={hasAnswered || selectedWords.length === 0}
       >
-        <Text style={styles.checkButtonText}>CHECK</Text>
+        <Text style={styles.checkButtonText}>{t.lesson.check}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -114,25 +139,24 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
+  content: {
+    flex: 1,
+  },
   question: {
     fontSize: 24,
     fontWeight: "bold",
-    color: Colors.text,
     marginBottom: 30,
     textAlign: "center",
   },
   answerBox: {
     minHeight: 80,
-    backgroundColor: Colors.surface,
     borderRadius: 16,
     borderWidth: 2,
-    borderColor: Colors.border,
     padding: 16,
     marginBottom: 20,
     justifyContent: "center",
   },
   placeholder: {
-    color: Colors.textSecondary,
     textAlign: "center",
     fontSize: 16,
   },
@@ -142,7 +166,6 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   selectedWord: {
-    backgroundColor: Colors.primary,
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderRadius: 12,
@@ -159,38 +182,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   word: {
-    backgroundColor: Colors.surface,
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: Colors.border,
   },
   wordText: {
-    color: Colors.text,
     fontSize: 16,
     fontWeight: "500",
   },
   checkButton: {
-    backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 16,
     alignItems: "center",
-  },
-  checkButtonDisabled: {
-    backgroundColor: Colors.locked,
   },
   checkButtonText: {
     color: "#FFF",
     fontSize: 18,
     fontWeight: "bold",
-  },
-  correct: {
-    backgroundColor: "#D7FFD7",
-    borderColor: Colors.success,
-  },
-  incorrect: {
-    backgroundColor: "#FFD7D7",
-    borderColor: Colors.error,
   },
 });

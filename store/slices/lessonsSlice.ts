@@ -22,8 +22,12 @@ const lessonsSlice = createSlice({
     clearCurrentLesson: (state) => {
       state.currentLessonId = null;
     },
+    setUnits: (state, action: PayloadAction<Unit[]>) => {
+      state.units = action.payload;
+    },
   },
 });
 
-export const { setCurrentLesson, clearCurrentLesson } = lessonsSlice.actions;
+export const { setCurrentLesson, clearCurrentLesson, setUnits } =
+  lessonsSlice.actions;
 export default lessonsSlice.reducer;

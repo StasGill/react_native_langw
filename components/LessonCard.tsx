@@ -40,7 +40,7 @@ export default function LessonCard({
         {isLocked ? (
           <Text style={styles.lockIcon}>🔒</Text>
         ) : isCompleted ? (
-          <Text style={styles.checkIcon}>⭐</Text>
+          <Text style={styles.checkIcon}>🏆</Text>
         ) : (
           <Text style={styles.number}>{index + 1}</Text>
         )}

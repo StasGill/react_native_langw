@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Colors } from "../constants/colors";
+import { useTheme } from "../contexts/ThemeContext";
 import { playCorrectSound, playIncorrectSound } from "../utils/sounds";
 
 interface Pair {
@@ -29,6 +29,7 @@ export default function ExerciseMatching({
 
   const [shuffledPolish, setShuffledPolish] = useState<string[]>([]);
   const [shuffledEnglish, setShuffledEnglish] = useState<string[]>([]);
+  const { colors } = useTheme();
 
   useEffect(() => {
     // Shuffle arrays independently
@@ -99,49 +100,85 @@ export default function ExerciseMatching({
     }
   };
 
-  const getPolishStyle = (word: string) => {
-    if (matchedPairs.has(word)) return [styles.word, styles.matched];
-    if (selectedPolish === word) return [styles.word, styles.selected];
-    if (incorrectPair?.polish === word) return [styles.word, styles.incorrect];
-    return styles.word;
-  };
+  const getWordStyle = (
+    word: string,
+    isSelected: boolean,
+    isIncorrect: boolean
+  ) => {
+    const baseStyle = [
+      styles.word,
+      { backgroundColor: colors.surface, borderColor: colors.border },
+    ];
 
-  const getEnglishStyle = (word: string) => {
-    if (matchedPairs.has(word)) return [styles.word, styles.matched];
-    if (selectedEnglish === word) return [styles.word, styles.selected];
-    if (incorrectPair?.english === word) return [styles.word, styles.incorrect];
-    return styles.word;
+    if (matchedPairs.has(word)) {
+      return [
+        ...baseStyle,
+        styles.matched,
+        { backgroundColor: "#D7FFD7", borderColor: colors.success },
+      ];
+    }
+    if (isSelected) {
+      return [
+        ...baseStyle,
+        styles.selected,
+        { backgroundColor: colors.secondary, borderColor: colors.secondary },
+      ];
+    }
+    if (isIncorrect) {
+      return [
+        ...baseStyle,
+        styles.incorrect,
+        { backgroundColor: "#FFD7D7", borderColor: colors.error },
+      ];
+    }
+    return baseStyle;
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.question}>{question}</Text>
+      <Text style={[styles.question, { color: colors.text }]}>{question}</Text>
 
       <View style={styles.columnsContainer}>
         <View style={styles.column}>
-          <Text style={styles.columnTitle}>Polish</Text>
+          <Text style={[styles.columnTitle, { color: colors.textSecondary }]}>
+            Polish
+          </Text>
           {shuffledPolish.map((word, index) => (
             <TouchableOpacity
               key={index}
-              style={getPolishStyle(word)}
+              style={getWordStyle(
+                word,
+                selectedPolish === word,
+                incorrectPair?.polish === word
+              )}
               onPress={() => handlePolishPress(word)}
               disabled={matchedPairs.has(word)}
             >
-              <Text style={styles.wordText}>{word}</Text>
+              <Text style={[styles.wordText, { color: colors.text }]}>
+                {word}
+              </Text>
             </TouchableOpacity>
           ))}
         </View>
 
         <View style={styles.column}>
-          <Text style={styles.columnTitle}>English</Text>
+          <Text style={[styles.columnTitle, { color: colors.textSecondary }]}>
+            English
+          </Text>
           {shuffledEnglish.map((word, index) => (
             <TouchableOpacity
               key={index}
-              style={getEnglishStyle(word)}
+              style={getWordStyle(
+                word,
+                selectedEnglish === word,
+                incorrectPair?.english === word
+              )}
               onPress={() => handleEnglishPress(word)}
               disabled={matchedPairs.has(word)}
             >
-              <Text style={styles.wordText}>{word}</Text>
+              <Text style={[styles.wordText, { color: colors.text }]}>
+                {word}
+              </Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -158,7 +195,6 @@ const styles = StyleSheet.create({
   question: {
     fontSize: 24,
     fontWeight: "bold",
-    color: Colors.text,
     marginBottom: 30,
     textAlign: "center",
   },
@@ -173,33 +209,20 @@ const styles = StyleSheet.create({
   columnTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: Colors.textSecondary,
     marginBottom: 8,
     textAlign: "center",
   },
   word: {
-    backgroundColor: Colors.surface,
     padding: 16,
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: Colors.border,
     alignItems: "center",
   },
   wordText: {
     fontSize: 16,
-    color: Colors.text,
     fontWeight: "500",
   },
-  selected: {
-    backgroundColor: Colors.secondary,
-    borderColor: Colors.secondary,
-  },
-  matched: {
-    backgroundColor: "#D7FFD7",
-    borderColor: Colors.success,
-  },
-  incorrect: {
-    backgroundColor: "#FFD7D7",
-    borderColor: Colors.error,
-  },
+  selected: {},
+  matched: {},
+  incorrect: {},
 });

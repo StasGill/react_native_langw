@@ -26,6 +26,7 @@ export interface Unit {
   title: string;
   description: string;
   color: string;
+  emoji: string;
   lessons: Lesson[];
 }
 
@@ -51,4 +52,5 @@ export interface UserProfile {
   dailyGoal: number;
   soundEnabled: boolean;
   notificationsEnabled: boolean;
+  sourceLanguage: "en" | "ua";
 }

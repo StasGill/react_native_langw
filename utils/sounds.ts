@@ -11,7 +11,7 @@ export async function loadSounds() {
       {
         uri: "https://assets.mixkit.co/active_storage/sfx/2018/2018-preview.mp3",
       },
-      { shouldPlay: false }
+      { shouldPlay: false, volume: 0.1 }
     );
     correctSound = correct;
 
@@ -20,16 +20,16 @@ export async function loadSounds() {
       {
         uri: "https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3",
       },
-      { shouldPlay: false }
+      { shouldPlay: false, volume: 0.1 }
     );
     incorrectSound = incorrect;
 
     // Load lesson complete sound (celebration)
     const { sound: complete } = await Audio.Sound.createAsync(
       {
-        uri: "https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3",
+        uri: "https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3",
       },
-      { shouldPlay: false }
+      { shouldPlay: false, volume: 0.5 }
     );
     completeSound = complete;
   } catch (error) {

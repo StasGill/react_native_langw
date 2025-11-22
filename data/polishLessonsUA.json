@@ -1,45 +1,45 @@
 {
   "units": [
     {
-      "id": "unit1",
-      "title": "Basics 1",
-      "description": "Start your Polish journey with essential greetings and phrases",
+      "id": "unit1_pl_ukr",
+      "title": "Основи 1",
+      "description": "Розпочніть свою польську подорож з необхідних привітань та фраз",
       "color": "#58CC02",
       "emoji": "👋",
       "lessons": [
         {
-          "id": "lesson1",
-          "unitId": "unit1",
-          "title": "Politeness",
-          "description": "Essential polite expressions",
-          "difficulty": "beginner",
+          "id": "lesson1_pl_ukr",
+          "unitId": "unit1_pl_ukr",
+          "title": "Ввічливість",
+          "description": "Основні ввічливі вирази",
+          "difficulty": "початківець",
           "xpReward": 10,
           "exercises": [
             {
-              "id": "ex1",
+              "id": "ex1_pl_ukr",
               "type": "multipleChoice",
-              "question": "How do you say \"Please\" in Polish?",
+              "question": "Як сказати (Будь ласка) польською?",
               "correctAnswer": "Proszę",
               "options": ["Proszę", "Dziękuję", "Przepraszam", "Tak"]
             },
             {
-              "id": "ex2",
+              "id": "ex2_pl_ukr",
               "type": "multipleChoice",
-              "question": "What does \"Dziękuję\" mean?",
+              "question": "Що означає \"Dziękuję\" (Дякую)?",
               "correctAnswer": "Thank you",
               "options": ["Thank you", "Please", "Sorry", "Yes"]
             },
             {
-              "id": "ex3",
+              "id": "ex3_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Excuse me\" or \"Sorry\"",
+              "question": "Перекладіть: \"Excuse me\" або \"Sorry\" (Вибачте)",
               "correctAnswer": "Przepraszam",
               "words": ["Przepraszam", "Dziękuję", "Proszę", "Tak"]
             },
             {
-              "id": "ex4",
+              "id": "ex4_pl_ukr",
               "type": "matching",
-              "question": "Match the Polish words with their English meanings",
+              "question": "Зіставте польські слова з їхніми англійськими значеннями",
               "correctAnswer": "all",
               "pairs": [
                 { "polish": "Tak", "english": "Yes" },
@@ -48,9 +48,9 @@
               ]
             },
             {
-              "id": "ex5",
+              "id": "ex5_pl_ukr",
               "type": "multipleChoice",
-              "question": "How do you politely say \"Yes, please\" in Polish?",
+              "question": "Як ввічливо сказати \"Yes, please\" (Так, будь ласка) польською?",
               "correctAnswer": "Tak, proszę",
               "options": [
                 "Tak, proszę",
@@ -60,30 +60,30 @@
               ]
             },
             {
-              "id": "ex6",
+              "id": "ex6_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"No, thank you\"",
+              "question": "Перекладіть: \"No, thank you\" (Ні, дякую)",
               "correctAnswer": "Nie, dziękuję",
               "words": ["Nie, dziękuję", "Tak, proszę", "Przepraszam", "Proszę"]
             },
             {
-              "id": "ex7",
+              "id": "ex7_pl_ukr",
               "type": "multipleChoice",
-              "question": "Which phrase means \"You’re welcome\" in Polish?",
+              "question": "Яка фраза означає \"You’re welcome\" (Прошу) польською?",
               "correctAnswer": "Proszę bardzo",
               "options": ["Proszę bardzo", "Dziękuję", "Przepraszam", "Nie"]
             },
             {
-              "id": "ex8",
+              "id": "ex8_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Thank you very much\"",
+              "question": "Перекладіть: \"Thank you very much\" (Дуже дякую)",
               "correctAnswer": "Dziękuję bardzo",
               "words": ["Dziękuję bardzo", "Proszę", "Przepraszam", "Tak"]
             },
             {
-              "id": "ex9",
+              "id": "ex9_pl_ukr",
               "type": "matching",
-              "question": "Match the polite phrases",
+              "question": "Зіставте ввічливі фрази",
               "correctAnswer": "all",
               "pairs": [
                 { "polish": "Dziękuję", "english": "Thank you" },
@@ -92,34 +92,34 @@
               ]
             },
             {
-              "id": "ex10",
+              "id": "ex10_pl_ukr",
               "type": "multipleChoice",
-              "question": "Which word can mean both 'Please' and 'You're welcome'?",
+              "question": "Яке польське слово може означати як 'Please', так і 'You're welcome'?",
               "correctAnswer": "Proszę",
               "options": ["Przepraszam", "Proszę", "Dziękuję", "Nie"]
             }
           ]
         },
         {
-          "id": "lesson2",
-          "unitId": "unit1",
-          "title": "Greetings",
-          "description": "Learn how to say hello and goodbye",
-          "difficulty": "beginner",
+          "id": "lesson2_pl_ukr",
+          "unitId": "unit1_pl_ukr",
+          "title": "Привітання",
+          "description": "Навчіться говорити привіт і до побачення",
+          "difficulty": "початківець",
           "xpReward": 10,
-          "requiredLessonId": "lesson1",
+          "requiredLessonId": "lesson1_pl_ukr",
           "exercises": [
             {
-              "id": "ex11",
+              "id": "ex11_pl_ukr",
               "type": "multipleChoice",
-              "question": "How do you say \"Hello\" (informal) in Polish?",
+              "question": "Як сказати \"Hello\" (Привіт - informal) польською?",
               "correctAnswer": "Cześć",
               "options": ["Dzień dobry", "Cześć", "Do widzenia", "Dobranoc"]
             },
             {
-              "id": "ex12",
+              "id": "ex12_pl_ukr",
               "type": "multipleChoice",
-              "question": "Which phrase means \"Good morning\" or \"Good afternoon\"?",
+              "question": "Яка фраза означає \"Good morning\" або \"Good afternoon\" (Добрий день)?",
               "correctAnswer": "Dzień dobry",
               "options": [
                 "Cześć",
@@ -129,16 +129,16 @@
               ]
             },
             {
-              "id": "ex13",
+              "id": "ex13_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Good evening\"",
+              "question": "Перекладіть: \"Good evening\" (Добрий вечір)",
               "correctAnswer": "Dobry wieczór",
               "words": ["Dobry wieczór", "Dzień dobry", "Cześć", "Dobranoc"]
             },
             {
-              "id": "ex14",
+              "id": "ex14_pl_ukr",
               "type": "matching",
-              "question": "Match the farewells",
+              "question": "Зіставте прощання",
               "correctAnswer": "all",
               "pairs": [
                 { "polish": "Cześć", "english": "Bye (informal)" },
@@ -150,37 +150,37 @@
               ]
             },
             {
-              "id": "ex15",
+              "id": "ex15_pl_ukr",
               "type": "multipleChoice",
-              "question": "What should you say when leaving a formal situation in the daytime?",
+              "question": "Що ви скажете, коли йдете з формальної зустрічі вдень?",
               "correctAnswer": "Do widzenia",
               "options": ["Cześć", "Dobranoc", "Do widzenia", "Dzień dobry"]
             },
             {
-              "id": "ex16",
+              "id": "ex16_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"See you later\" (informal)",
+              "question": "Перекладіть: \"See you later\" (Побачимось - informal)",
               "correctAnswer": "Na razie",
               "words": ["Na razie", "Cześć", "Do widzenia", "Dzień dobry"]
             },
             {
-              "id": "ex17",
+              "id": "ex17_pl_ukr",
               "type": "multipleChoice",
-              "question": "If you are meeting a close friend, you would most likely say:",
+              "question": "Якщо ви зустрічаєте близького друга, ви, швидше за все, скажете:",
               "correctAnswer": "Cześć",
               "options": ["Dzień dobry", "Dobranoc", "Cześć", "Do widzenia"]
             },
             {
-              "id": "ex18",
+              "id": "ex18_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Have a nice day\"",
+              "question": "Перекладіть: \"Have a nice day\" (Гарного дня)",
               "correctAnswer": "Miłego dnia",
               "words": ["Miłego dnia", "Do widzenia", "Dziękuję", "Dobranoc"]
             },
             {
-              "id": "ex19",
+              "id": "ex19_pl_ukr",
               "type": "multipleChoice",
-              "question": "You should use **Dzień dobry** when greeting someone:",
+              "question": "Ви повинні використовувати **Dzień dobry** (Добрий день), коли вітаєте когось:",
               "correctAnswer": "In the morning or afternoon (formal)",
               "options": [
                 "Before going to sleep",
@@ -190,27 +190,27 @@
               ]
             },
             {
-              "id": "ex20",
+              "id": "ex20_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Good night\" (used before sleeping)",
+              "question": "Перекладіть: \"Good night\" (На добраніч - used before sleeping)",
               "correctAnswer": "Dobranoc",
               "words": ["Dobranoc", "Do widzenia", "Dobry wieczór", "Cześć"]
             }
           ]
         },
         {
-          "id": "lesson3",
-          "unitId": "unit1",
-          "title": "Introductions",
-          "description": "Learn how to introduce yourself and ask for names",
-          "difficulty": "beginner",
+          "id": "lesson3_pl_ukr",
+          "unitId": "unit1_pl_ukr",
+          "title": "Представлення",
+          "description": "Навчіться представлятися та питати імена",
+          "difficulty": "початківець",
           "xpReward": 10,
-          "requiredLessonId": "lesson2",
+          "requiredLessonId": "lesson2_pl_ukr",
           "exercises": [
             {
-              "id": "ex21",
+              "id": "ex21_pl_ukr",
               "type": "multipleChoice",
-              "question": "How do you ask \"What is your name?\" (formal, to a woman)?",
+              "question": "Як запитати \"What is your name?\" (Як Вас звати? - formal, to a woman)?",
               "correctAnswer": "Jak się Pani nazywa?",
               "options": [
                 "Jak masz na imię?",
@@ -220,9 +220,9 @@
               ]
             },
             {
-              "id": "ex22",
+              "id": "ex22_pl_ukr",
               "type": "multipleChoice",
-              "question": "What does \"Nazywam się...\" mean?",
+              "question": "Що означає \"Nazywam się...\" (Мене звати...)?",
               "correctAnswer": "My name is...",
               "options": [
                 "How are you?",
@@ -232,16 +232,16 @@
               ]
             },
             {
-              "id": "ex23",
+              "id": "ex23_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Nice to meet you\"",
+              "question": "Перекладіть: \"Nice to meet you\" (Приємно познайомитись)",
               "correctAnswer": "Miło mi",
               "words": ["Miło mi", "Przepraszam", "Dziękuję", "Proszę"]
             },
             {
-              "id": "ex24",
+              "id": "ex24_pl_ukr",
               "type": "matching",
-              "question": "Match the phrases",
+              "question": "Зіставте фрази",
               "correctAnswer": "all",
               "pairs": [
                 {
@@ -253,9 +253,9 @@
               ]
             },
             {
-              "id": "ex25",
+              "id": "ex25_pl_ukr",
               "type": "multipleChoice",
-              "question": "How do you ask for someone's name (informal)?",
+              "question": "Як запитати чиєсь ім'я (неформально)?",
               "correctAnswer": "Jak masz na imię?",
               "options": [
                 "Jak się masz?",
@@ -265,9 +265,9 @@
               ]
             },
             {
-              "id": "ex26",
+              "id": "ex26_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"I am Kasia\"",
+              "question": "Перекладіть: \"I am Kasia\" (Я Кася)",
               "correctAnswer": "Jestem Kasia",
               "words": [
                 "Jestem Kasia",
@@ -277,30 +277,30 @@
               ]
             },
             {
-              "id": "ex27",
+              "id": "ex27_pl_ukr",
               "type": "multipleChoice",
-              "question": "If someone says 'Nazywam się Jan', how might you respond?",
+              "question": "Якщо хтось каже 'Nazywam się Jan', як ви можете відповісти?",
               "correctAnswer": "Miło mi",
               "options": ["Nie, dziękuję", "Proszę", "Miło mi", "Do widzenia"]
             },
             {
-              "id": "ex28",
+              "id": "ex28_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"And you?\" (formal)",
+              "question": "Перекладіть: \"And you?\" (А Ви? - formal)",
               "correctAnswer": "A Pan/Pani?",
               "words": ["A Pan/Pani?", "A Ty?", "Miło mi", "Dziękuję"]
             },
             {
-              "id": "ex29",
+              "id": "ex29_pl_ukr",
               "type": "multipleChoice",
-              "question": "Which verb means 'to be called' or 'my name is' in Polish?",
+              "question": "Яке польське дієслово означає 'to be called' (називатися) або 'my name is'?",
               "correctAnswer": "Nazywać się",
               "options": ["Dziękować", "Nazywać się", "Być", "Mówić"]
             },
             {
-              "id": "ex30",
+              "id": "ex30_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Very well, thank you\"",
+              "question": "Перекладіть: \"Very well, thank you\" (Дуже добре, дякую)",
               "correctAnswer": "Bardzo dobrze, dziękuję",
               "words": [
                 "Bardzo dobrze, dziękuję",
@@ -312,18 +312,18 @@
           ]
         },
         {
-          "id": "lesson4",
-          "unitId": "unit1",
-          "title": "Simple Questions & Responses",
-          "description": "Basic Q&A for everyday conversation",
-          "difficulty": "beginner",
+          "id": "lesson4_pl_ukr",
+          "unitId": "unit1_pl_ukr",
+          "title": "Прості Питання та Відповіді",
+          "description": "Базові питання та відповіді для повсякденної розмови",
+          "difficulty": "початківець",
           "xpReward": 10,
-          "requiredLessonId": "lesson3",
+          "requiredLessonId": "lesson3_pl_ukr",
           "exercises": [
             {
-              "id": "ex31",
+              "id": "ex31_pl_ukr",
               "type": "multipleChoice",
-              "question": "What does \"Skąd jesteś?\" mean?",
+              "question": "Що означає \"Skąd jesteś?\" (Звідки ти?)",
               "correctAnswer": "Where are you from? (informal)",
               "options": [
                 "How old are you?",
@@ -333,9 +333,9 @@
               ]
             },
             {
-              "id": "ex32",
+              "id": "ex32_pl_ukr",
               "type": "multipleChoice",
-              "question": "How do you say \"I am from Poland\"?",
+              "question": "Як сказати \"I am from Poland\" (Я з Польщі)?",
               "correctAnswer": "Jestem z Polski",
               "options": [
                 "Mam się dobrze",
@@ -345,9 +345,9 @@
               ]
             },
             {
-              "id": "ex33",
+              "id": "ex33_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Yes, I understand\"",
+              "question": "Перекладіть: \"Yes, I understand\" (Так, я розумію)",
               "correctAnswer": "Tak, rozumiem",
               "words": [
                 "Tak, rozumiem",
@@ -357,9 +357,9 @@
               ]
             },
             {
-              "id": "ex34",
+              "id": "ex34_pl_ukr",
               "type": "matching",
-              "question": "Match the language phrases",
+              "question": "Зіставте фрази про мову",
               "correctAnswer": "all",
               "pairs": [
                 {
@@ -371,9 +371,9 @@
               ]
             },
             {
-              "id": "ex35",
+              "id": "ex35_pl_ukr",
               "type": "multipleChoice",
-              "question": "Which phrase is a negative response to \"Do you speak Polish?\"",
+              "question": "Яка фраза є негативною відповіддю на \"Чи говориш ти польською?\"",
               "correctAnswer": "Nie mówię po polsku",
               "options": [
                 "Mówię po polsku",
@@ -383,9 +383,9 @@
               ]
             },
             {
-              "id": "ex36",
+              "id": "ex36_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"I speak English\"",
+              "question": "Перекладіть: \"I speak English\" (Я говорю англійською)",
               "correctAnswer": "Mówię po angielsku",
               "words": [
                 "Mówię po angielsku",
@@ -395,9 +395,9 @@
               ]
             },
             {
-              "id": "ex37",
+              "id": "ex37_pl_ukr",
               "type": "multipleChoice",
-              "question": "If someone asks 'Skąd jesteś?' you should answer with:",
+              "question": "Якщо хтось питає 'Skąd jesteś?' (Звідки ти?), ви повинні відповісти:",
               "correctAnswer": "Jestem z...",
               "options": [
                 "Jak się masz?",
@@ -407,9 +407,9 @@
               ]
             },
             {
-              "id": "ex38",
+              "id": "ex38_pl_ukr",
               "type": "translation",
-              "question": "Translate: \"Where do you live?\"",
+              "question": "Перекладіть: \"Where do you live?\" (Де ти живеш?)",
               "correctAnswer": "Gdzie mieszkasz?",
               "words": [
                 "Gdzie mieszkasz?",
@@ -419,9 +419,9 @@
               ]
             },
             {
-              "id": "ex39",
+              "id": "ex39_pl_ukr",
               "type": "multipleChoice",
-              "question": "How do you say 'No, I don't understand'?",
+              "question": "Як сказати 'No, I don't understand' (Ні, я не розумію)?",
               "correctAnswer": "Nie, nie rozumiem",
               "options": [
                 "Tak, rozumiem",
@@ -431,9 +431,9 @@
               ]
             },
             {
-              "id": "ex40",
+              "id": "ex40_pl_ukr",
               "type": "matching",
-              "question": "Match the word to its meaning",
+              "question": "Зіставте польське слово з його англійським значенням",
               "correctAnswer": "all",
               "pairs": [
                 { "polish": "Gdzie", "english": "Where" },
@@ -447,16 +447,16 @@
     },
     {
       "id": "unit2",
-      "title": "Basics 2",
-      "description": "Numbers, colors, and common words",
+      "title": "Основи 2",
+      "description": "Числа, кольори та загальні слова",
       "color": "#FF9600",
       "emoji": "🎨",
       "lessons": [
         {
           "id": "lesson4",
           "unitId": "unit2",
-          "title": "Numbers 1-10",
-          "description": "Learn to count in Polish",
+          "title": "Числа 1-10",
+          "description": "Навчіться рахувати польською",
           "difficulty": "beginner",
           "xpReward": 10,
           "requiredLessonId": "lesson3",
@@ -464,14 +464,14 @@
             {
               "id": "ex13",
               "type": "multipleChoice",
-              "question": "What is \"one\" in Polish?",
+              "question": "Як сказати \"один\" польською?",
               "correctAnswer": "jeden",
               "options": ["jeden", "dwa", "trzy", "cztery"]
             },
             {
               "id": "ex14",
               "type": "matching",
-              "question": "Match the numbers",
+              "question": "З'єднайте числа",
               "correctAnswer": "all",
               "pairs": [
                 {
@@ -491,14 +491,14 @@
             {
               "id": "ex15",
               "type": "multipleChoice",
-              "question": "What is \"ten\" in Polish?",
+              "question": "Як сказати \"десять\" польською?",
               "correctAnswer": "dziesięć",
               "options": ["dziesięć", "dziewięć", "osiem", "siedem"]
             },
             {
               "id": "ex16",
               "type": "translation",
-              "question": "Translate: \"three\"",
+              "question": "Перекладіть: \"три\"",
               "correctAnswer": "trzy",
               "words": ["jeden", "dwa", "trzy", "cztery"]
             }
@@ -507,8 +507,8 @@
         {
           "id": "lesson5",
           "unitId": "unit2",
-          "title": "Colors",
-          "description": "Learn basic colors in Polish",
+          "title": "Кольори",
+          "description": "Вивчіть основні кольори",
           "difficulty": "beginner",
           "xpReward": 10,
           "requiredLessonId": "lesson4",
@@ -516,41 +516,41 @@
             {
               "id": "ex17",
               "type": "multipleChoice",
-              "question": "What is \"red\" in Polish?",
+              "question": "Як сказати \"червоний\" польською?",
               "correctAnswer": "czerwony",
               "options": ["czerwony", "niebieski", "zielony", "żółty"]
             },
             {
               "id": "ex18",
               "type": "matching",
-              "question": "Match the colors",
+              "question": "З'єднайте кольори",
               "correctAnswer": "all",
               "pairs": [
                 {
                   "polish": "niebieski",
-                  "english": "blue"
+                  "english": "синій"
                 },
                 {
                   "polish": "zielony",
-                  "english": "green"
+                  "english": "зелений"
                 },
                 {
                   "polish": "biały",
-                  "english": "white"
+                  "english": "білий"
                 }
               ]
             },
             {
               "id": "ex19",
               "type": "multipleChoice",
-              "question": "What does \"czarny\" mean?",
-              "correctAnswer": "black",
-              "options": ["black", "white", "yellow", "pink"]
+              "question": "Що означає \"czarny\"?",
+              "correctAnswer": "чорний",
+              "options": ["чорний", "білий", "жовтий", "рожевий"]
             },
             {
               "id": "ex20",
               "type": "translation",
-              "question": "Translate: \"yellow\"",
+              "question": "Перекладіть: \"жовтий\"",
               "correctAnswer": "żółty",
               "words": ["czerwony", "żółty", "różowy", "brązowy"]
             }
@@ -559,8 +559,8 @@
         {
           "id": "lesson6",
           "unitId": "unit2",
-          "title": "Common Words",
-          "description": "Essential everyday words",
+          "title": "Загальні слова",
+          "description": "Важливі повсякденні слова",
           "difficulty": "beginner",
           "xpReward": 15,
           "requiredLessonId": "lesson5",
@@ -568,41 +568,41 @@
             {
               "id": "ex21",
               "type": "multipleChoice",
-              "question": "What is \"water\" in Polish?",
+              "question": "Як сказати \"вода\" польською?",
               "correctAnswer": "woda",
               "options": ["woda", "mleko", "sok", "kawa"]
             },
             {
               "id": "ex22",
               "type": "matching",
-              "question": "Match the words",
+              "question": "З'єднайте слова",
               "correctAnswer": "all",
               "pairs": [
                 {
                   "polish": "chleb",
-                  "english": "bread"
+                  "english": "хліб"
                 },
                 {
                   "polish": "mleko",
-                  "english": "milk"
+                  "english": "молоко"
                 },
                 {
                   "polish": "kawa",
-                  "english": "coffee"
+                  "english": "кава"
                 }
               ]
             },
             {
               "id": "ex23",
               "type": "multipleChoice",
-              "question": "What does \"dom\" mean?",
-              "correctAnswer": "house",
-              "options": ["house", "car", "tree", "book"]
+              "question": "Що означає \"dom\"?",
+              "correctAnswer": "будинок",
+              "options": ["будинок", "машина", "дерево", "книга"]
             },
             {
               "id": "ex24",
               "type": "translation",
-              "question": "Translate: \"book\"",
+              "question": "Перекладіть: \"книга\"",
               "correctAnswer": "książka",
               "words": ["książka", "stół", "krzesło", "okno"]
             }
@@ -612,16 +612,16 @@
     },
     {
       "id": "unit3",
-      "title": "Food & Drink",
-      "description": "Learn food and drink vocabulary",
+      "title": "Їжа та напої",
+      "description": "Вивчіть слова про їжу та напої",
       "color": "#CE82FF",
       "emoji": "🍎",
       "lessons": [
         {
           "id": "lesson7",
           "unitId": "unit3",
-          "title": "Meals",
-          "description": "Breakfast, lunch, and dinner",
+          "title": "Прийоми їжі",
+          "description": "Сніданок, обід та вечеря",
           "difficulty": "beginner",
           "xpReward": 10,
           "requiredLessonId": "lesson6",
@@ -629,46 +629,46 @@
             {
               "id": "ex25",
               "type": "multipleChoice",
-              "question": "What is \"breakfast\" in Polish?",
+              "question": "Як сказати \"сніданок\" польською?",
               "correctAnswer": "śniadanie",
               "options": ["śniadanie", "obiad", "kolacja", "deser"]
             },
             {
               "id": "ex26",
               "type": "matching",
-              "question": "Match the meals",
+              "question": "З'єднайте прийоми їжі",
               "correctAnswer": "all",
               "pairs": [
                 {
                   "polish": "obiad",
-                  "english": "lunch"
+                  "english": "обід"
                 },
                 {
                   "polish": "kolacja",
-                  "english": "dinner"
+                  "english": "вечеря"
                 },
                 {
                   "polish": "deser",
-                  "english": "dessert"
+                  "english": "десерт"
                 }
               ]
             },
             {
               "id": "ex27",
               "type": "multipleChoice",
-              "question": "What does \"jestem głodny\" mean?",
-              "correctAnswer": "I am hungry",
+              "question": "Що означає \"jestem głodny\"?",
+              "correctAnswer": "Я голодний",
               "options": [
-                "I am hungry",
-                "I am thirsty",
-                "I am tired",
-                "I am happy"
+                "Я голодний",
+                "Я хочу пити",
+                "Я втомлений",
+                "Я щасливий"
               ]
             },
             {
               "id": "ex28",
               "type": "translation",
-              "question": "Translate: \"I am thirsty\"",
+              "question": "Перекладіть: \"Я хочу пити\"",
               "correctAnswer": "jestem spragniony",
               "words": ["jestem", "spragniony", "głodny", "zmęczony"]
             }
@@ -677,8 +677,8 @@
         {
           "id": "lesson8",
           "unitId": "unit3",
-          "title": "Fruits",
-          "description": "Common fruit names",
+          "title": "Фрукти",
+          "description": "Назви фруктів",
           "difficulty": "beginner",
           "xpReward": 10,
           "requiredLessonId": "lesson7",
@@ -686,41 +686,41 @@
             {
               "id": "ex29",
               "type": "multipleChoice",
-              "question": "What is \"apple\" in Polish?",
+              "question": "Як сказати \"яблуко\" польською?",
               "correctAnswer": "jabłko",
               "options": ["jabłko", "banan", "pomarańcza", "gruszka"]
             },
             {
               "id": "ex30",
               "type": "matching",
-              "question": "Match the fruits",
+              "question": "З'єднайте фрукти",
               "correctAnswer": "all",
               "pairs": [
                 {
                   "polish": "truskawka",
-                  "english": "strawberry"
+                  "english": "полуниця"
                 },
                 {
                   "polish": "winogrono",
-                  "english": "grape"
+                  "english": "виноград"
                 },
                 {
                   "polish": "arbuz",
-                  "english": "watermelon"
+                  "english": "кавун"
                 }
               ]
             },
             {
               "id": "ex31",
               "type": "multipleChoice",
-              "question": "What does \"banan\" mean?",
-              "correctAnswer": "banana",
-              "options": ["banana", "orange", "pear", "lemon"]
+              "question": "Що означає \"banan\"?",
+              "correctAnswer": "банан",
+              "options": ["банан", "апельсин", "груша", "лимон"]
             },
             {
               "id": "ex32",
               "type": "translation",
-              "question": "Translate: \"orange\"",
+              "question": "Перекладіть: \"апельсин\"",
               "correctAnswer": "pomarańcza",
               "words": ["jabłko", "pomarańcza", "cytryna", "gruszka"]
             }

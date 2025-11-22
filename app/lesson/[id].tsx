@@ -8,11 +8,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import * as Haptics from "expo-haptics";
 import ExerciseMatching from "../../components/ExerciseMatching";
 import ExerciseMultipleChoice from "../../components/ExerciseMultipleChoice";
 import ExerciseTranslation from "../../components/ExerciseTranslation";
 import ProgressBar from "../../components/ProgressBar";
-import { Colors } from "../../constants/colors";
+import { useTheme } from "../../contexts/ThemeContext";
+import { useTranslation } from "../../hooks/useTranslation";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { completeLesson } from "../../store/slices/progressSlice";
 import { Lesson } from "../../types/types";
@@ -26,6 +28,8 @@ export default function LessonScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const t = useTranslation();
+  const { colors } = useTheme();
 
   const { units } = useAppSelector((state) => state.lessons);
   const [lesson, setLesson] = useState<Lesson | null>(null);
@@ -42,6 +46,8 @@ export default function LessonScreen() {
       const foundLesson = unit.lessons.find((l) => l.id === id);
       if (foundLesson) {
         setLesson(foundLesson);
+        // Vibrate when lesson starts
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
         break;
       }
     }
@@ -54,9 +60,13 @@ export default function LessonScreen() {
 
   if (!lesson) {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView
+        style={[styles.container, { backgroundColor: colors.background }]}
+      >
         <View style={styles.center}>
-          <Text style={styles.errorText}>Lesson not found</Text>
+          <Text style={[styles.errorText, { color: colors.error }]}>
+            {t.lesson.notFound}
+          </Text>
         </View>
       </SafeAreaView>
     );
@@ -83,6 +93,8 @@ export default function LessonScreen() {
 
         // Play celebration sound
         playCompleteSound();
+        // Vibrate on completion
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
         dispatch(
           completeLesson({
@@ -141,10 +153,19 @@ export default function LessonScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      style={[styles.container, { backgroundColor: colors.background }]}
+    >
       <View style={styles.header}>
-        <TouchableOpacity onPress={handleClose} style={styles.closeButton}>
-          <Text style={styles.closeButtonText}>✕</Text>
+        <TouchableOpacity
+          onPress={handleClose}
+          style={[styles.closeButton, { backgroundColor: colors.surface }]}
+        >
+          <Text
+            style={[styles.closeButtonText, { color: colors.textSecondary }]}
+          >
+            ✕
+          </Text>
         </TouchableOpacity>
         <View style={styles.progressContainer}>
           <ProgressBar progress={progress} />
@@ -155,29 +176,62 @@ export default function LessonScreen() {
 
       <Modal visible={showResults} animationType="slide" transparent>
         <View style={styles.modalOverlay}>
-          <View style={styles.resultsCard}>
-            <Text style={styles.resultsTitle}>Lesson Complete! 🎉</Text>
-            <Text style={styles.resultsSubtitle}>{lesson.title}</Text>
+          <View style={[styles.resultsCard, { backgroundColor: colors.card }]}>
+            <Text style={[styles.resultsTitle, { color: colors.text }]}>
+              {t.lesson.complete}
+            </Text>
+            <Text
+              style={[styles.resultsSubtitle, { color: colors.textSecondary }]}
+            >
+              {lesson.title}
+            </Text>
 
             <View style={styles.resultsStats}>
-              <View style={styles.resultStat}>
-                <Text style={styles.resultStatValue}>
+              <View
+                style={[styles.resultStat, { backgroundColor: colors.surface }]}
+              >
+                <Text
+                  style={[styles.resultStatValue, { color: colors.primary }]}
+                >
                   {correctAnswers}/{lesson.exercises.length}
                 </Text>
-                <Text style={styles.resultStatLabel}>Correct</Text>
+                <Text
+                  style={[
+                    styles.resultStatLabel,
+                    { color: colors.textSecondary },
+                  ]}
+                >
+                  {t.lesson.correct}
+                </Text>
               </View>
 
-              <View style={styles.resultStat}>
-                <Text style={styles.resultStatValue}>+{lesson.xpReward}</Text>
-                <Text style={styles.resultStatLabel}>XP Earned</Text>
+              <View
+                style={[styles.resultStat, { backgroundColor: colors.surface }]}
+              >
+                <Text
+                  style={[styles.resultStatValue, { color: colors.xpGold }]}
+                >
+                  +{lesson.xpReward}
+                </Text>
+                <Text
+                  style={[
+                    styles.resultStatLabel,
+                    { color: colors.textSecondary },
+                  ]}
+                >
+                  {t.lesson.xpEarned}
+                </Text>
               </View>
             </View>
 
             <TouchableOpacity
-              style={styles.continueButton}
+              style={[
+                styles.continueButton,
+                { backgroundColor: colors.primary },
+              ]}
               onPress={handleContinue}
             >
-              <Text style={styles.continueButtonText}>CONTINUE</Text>
+              <Text style={styles.continueButtonText}>{t.lesson.continue}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -189,7 +243,6 @@ export default function LessonScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
   },
   center: {
     flex: 1,
@@ -198,7 +251,6 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: 18,
-    color: Colors.error,
   },
   header: {
     flexDirection: "row",
@@ -210,13 +262,11 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: Colors.surface,
     justifyContent: "center",
     alignItems: "center",
   },
   closeButtonText: {
     fontSize: 20,
-    color: Colors.textSecondary,
   },
   progressContainer: {
     flex: 1,
@@ -232,7 +282,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   resultsCard: {
-    backgroundColor: "#FFF",
     borderRadius: 24,
     padding: 32,
     width: "100%",
@@ -242,13 +291,11 @@ const styles = StyleSheet.create({
   resultsTitle: {
     fontSize: 32,
     fontWeight: "bold",
-    color: Colors.text,
     marginBottom: 8,
     textAlign: "center",
   },
   resultsSubtitle: {
     fontSize: 18,
-    color: Colors.textSecondary,
     marginBottom: 32,
   },
   resultsStats: {
@@ -258,7 +305,6 @@ const styles = StyleSheet.create({
   },
   resultStat: {
     alignItems: "center",
-    backgroundColor: Colors.surface,
     padding: 20,
     borderRadius: 16,
     minWidth: 120,
@@ -266,15 +312,12 @@ const styles = StyleSheet.create({
   resultStatValue: {
     fontSize: 28,
     fontWeight: "bold",
-    color: Colors.primary,
     marginBottom: 4,
   },
   resultStatLabel: {
     fontSize: 14,
-    color: Colors.textSecondary,
   },
   continueButton: {
-    backgroundColor: Colors.primary,
     paddingVertical: 18,
     paddingHorizontal: 48,
     borderRadius: 16,
