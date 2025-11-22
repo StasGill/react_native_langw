@@ -1,0 +1,825 @@
+{
+  "units": [
+    {
+      "id": "unit1",
+      "title": "Basics 1",
+      "description": "Start your Polish journey with essential greetings and phrases",
+      "color": "#58CC02",
+      "lessons": [
+        {
+          "id": "lesson1",
+          "unitId": "unit1",
+          "title": "Greetings",
+          "description": "Learn basic Polish greetings",
+          "difficulty": "beginner",
+          "xpReward": 10,
+          "exercises": [
+            {
+              "id": "ex1",
+              "type": "multipleChoice",
+              "question": "How do you say \"Hello\" in Polish?",
+              "correctAnswer": "Cześć",
+              "options": [
+                "Cześć",
+                "Dziękuję",
+                "Proszę",
+                "Do widzenia"
+              ]
+            },
+            {
+              "id": "ex2",
+              "type": "multipleChoice",
+              "question": "What does \"Dzień dobry\" mean?",
+              "correctAnswer": "Good morning/Good day",
+              "options": [
+                "Good morning/Good day",
+                "Good night",
+                "Goodbye",
+                "Thank you"
+              ]
+            },
+            {
+              "id": "ex3",
+              "type": "translation",
+              "question": "Translate: \"Good evening\"",
+              "correctAnswer": "Dobry wieczór",
+              "words": [
+                "Dobry",
+                "wieczór",
+                "dzień",
+                "noc"
+              ]
+            },
+            {
+              "id": "ex4",
+              "type": "multipleChoice",
+              "question": "How do you say \"Goodbye\" in Polish?",
+              "correctAnswer": "Do widzenia",
+              "options": [
+                "Do widzenia",
+                "Cześć",
+                "Dzień dobry",
+                "Proszę"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson2",
+          "unitId": "unit1",
+          "title": "Politeness",
+          "description": "Essential polite expressions",
+          "difficulty": "beginner",
+          "xpReward": 10,
+          "requiredLessonId": "lesson1",
+          "exercises": [
+            {
+              "id": "ex5",
+              "type": "multipleChoice",
+              "question": "How do you say \"Please\" in Polish?",
+              "correctAnswer": "Proszę",
+              "options": [
+                "Proszę",
+                "Dziękuję",
+                "Przepraszam",
+                "Tak"
+              ]
+            },
+            {
+              "id": "ex6",
+              "type": "multipleChoice",
+              "question": "What does \"Dziękuję\" mean?",
+              "correctAnswer": "Thank you",
+              "options": [
+                "Thank you",
+                "Please",
+                "Sorry",
+                "Yes"
+              ]
+            },
+            {
+              "id": "ex7",
+              "type": "translation",
+              "question": "Translate: \"Excuse me\"",
+              "correctAnswer": "Przepraszam",
+              "words": [
+                "Przepraszam",
+                "Dziękuję",
+                "Proszę",
+                "Tak"
+              ]
+            },
+            {
+              "id": "ex8",
+              "type": "matching",
+              "question": "Match the Polish words with their English meanings",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "Tak",
+                  "english": "Yes"
+                },
+                {
+                  "polish": "Nie",
+                  "english": "No"
+                },
+                {
+                  "polish": "Proszę",
+                  "english": "Please"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson3",
+          "unitId": "unit1",
+          "title": "Introductions",
+          "description": "Introduce yourself in Polish",
+          "difficulty": "beginner",
+          "xpReward": 15,
+          "requiredLessonId": "lesson2",
+          "exercises": [
+            {
+              "id": "ex9",
+              "type": "multipleChoice",
+              "question": "How do you say \"My name is...\" in Polish?",
+              "correctAnswer": "Mam na imię...",
+              "options": [
+                "Mam na imię...",
+                "Jak się masz?",
+                "Miło mi",
+                "Jestem"
+              ]
+            },
+            {
+              "id": "ex10",
+              "type": "translation",
+              "question": "Translate: \"Nice to meet you\"",
+              "correctAnswer": "Miło mi cię poznać",
+              "words": [
+                "Miło",
+                "mi",
+                "cię",
+                "poznać",
+                "jak",
+                "się"
+              ]
+            },
+            {
+              "id": "ex11",
+              "type": "multipleChoice",
+              "question": "What does \"Jak się masz?\" mean?",
+              "correctAnswer": "How are you?",
+              "options": [
+                "How are you?",
+                "What is your name?",
+                "Nice to meet you",
+                "Goodbye"
+              ]
+            },
+            {
+              "id": "ex12",
+              "type": "matching",
+              "question": "Match the phrases",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "Jak się nazywasz?",
+                  "english": "What is your name?"
+                },
+                {
+                  "polish": "Dobrze",
+                  "english": "Good/Well"
+                },
+                {
+                  "polish": "Źle",
+                  "english": "Bad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lessonBasicVerbs",
+          "unitId": "unit1",
+          "title": "Basic Verbs",
+          "description": "Learn essential Polish verbs",
+          "difficulty": "beginner",
+          "xpReward": 15,
+          "requiredLessonId": "lesson3",
+          "exercises": [
+            {
+              "id": "exBV1",
+              "type": "multipleChoice",
+              "question": "What is \"to eat\" in Polish?",
+              "correctAnswer": "jeść",
+              "options": [
+                "jeść",
+                "pić",
+                "iść",
+                "mieć"
+              ]
+            },
+            {
+              "id": "exBV2",
+              "type": "multipleChoice",
+              "question": "What does \"pić\" mean?",
+              "correctAnswer": "to drink",
+              "options": [
+                "to drink",
+                "to go",
+                "to have",
+                "to see"
+              ]
+            },
+            {
+              "id": "exBV3",
+              "type": "translation",
+              "question": "Translate: \"to go\"",
+              "correctAnswer": "iść",
+              "words": [
+                "iść",
+                "jeść",
+                "pić",
+                "mieć"
+              ]
+            },
+            {
+              "id": "exBV4",
+              "type": "matching",
+              "question": "Match the verbs",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "mieć",
+                  "english": "to have"
+                },
+                {
+                  "polish": "widzieć",
+                  "english": "to see"
+                },
+                {
+                  "polish": "robić",
+                  "english": "to do/make"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lessonFamily",
+          "unitId": "unit1",
+          "title": "Family",
+          "description": "Learn basic family-related words",
+          "difficulty": "beginner",
+          "xpReward": 15,
+          "requiredLessonId": "lessonBasicVerbs",
+          "exercises": [
+            {
+              "id": "exFam1",
+              "type": "multipleChoice",
+              "question": "What is 'mother' in Polish?",
+              "correctAnswer": "mama",
+              "options": [
+                "mama",
+                "tata",
+                "siostra",
+                "brat"
+              ]
+            },
+            {
+              "id": "exFam2",
+              "type": "matching",
+              "question": "Match family members",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "tata",
+                  "english": "father"
+                },
+                {
+                  "polish": "siostra",
+                  "english": "sister"
+                },
+                {
+                  "polish": "brat",
+                  "english": "brother"
+                }
+              ]
+            },
+            {
+              "id": "exFam3",
+              "type": "translation",
+              "question": "Translate: 'family'",
+              "correctAnswer": "rodzina",
+              "words": [
+                "rodzina",
+                "mama",
+                "tata",
+                "dziecko"
+              ]
+            },
+            {
+              "id": "exFam4",
+              "type": "multipleChoice",
+              "question": "What does 'dziecko' mean?",
+              "correctAnswer": "child",
+              "options": [
+                "child",
+                "parent",
+                "grandmother",
+                "aunt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lessonObjects",
+          "unitId": "unit1",
+          "title": "Everyday Objects",
+          "description": "Learn common everyday objects",
+          "difficulty": "beginner",
+          "xpReward": 15,
+          "requiredLessonId": "lessonFamily",
+          "exercises": [
+            {
+              "id": "exObj1",
+              "type": "multipleChoice",
+              "question": "What is 'chair' in Polish?",
+              "correctAnswer": "krzesło",
+              "options": [
+                "krzesło",
+                "stół",
+                "kredka",
+                "okno"
+              ]
+            },
+            {
+              "id": "exObj2",
+              "type": "matching",
+              "question": "Match the objects",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "stół",
+                  "english": "table"
+                },
+                {
+                  "polish": "książka",
+                  "english": "book"
+                },
+                {
+                  "polish": "okno",
+                  "english": "window"
+                }
+              ]
+            },
+            {
+              "id": "exObj3",
+              "type": "translation",
+              "question": "Translate: 'phone'",
+              "correctAnswer": "telefon",
+              "words": [
+                "telefon",
+                "stół",
+                "krzesło",
+                "torba"
+              ]
+            },
+            {
+              "id": "exObj4",
+              "type": "multipleChoice",
+              "question": "What does 'torba' mean?",
+              "correctAnswer": "bag",
+              "options": [
+                "bag",
+                "glass",
+                "pen",
+                "lamp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lessonDirections",
+          "unitId": "unit1",
+          "title": "Directions",
+          "description": "Learn how to ask and give directions in Polish",
+          "difficulty": "beginner",
+          "xpReward": 15,
+          "requiredLessonId": "lessonObjects",
+          "exercises": [
+            {
+              "id": "exDir1",
+              "type": "multipleChoice",
+              "question": "What is 'left' in Polish?",
+              "correctAnswer": "lewo",
+              "options": [
+                "lewo",
+                "prawo",
+                "prosto",
+                "za"
+              ]
+            },
+            {
+              "id": "exDir2",
+              "type": "matching",
+              "question": "Match directions",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "prawo",
+                  "english": "right"
+                },
+                {
+                  "polish": "prosto",
+                  "english": "straight"
+                },
+                {
+                  "polish": "za",
+                  "english": "behind"
+                }
+              ]
+            },
+            {
+              "id": "exDir3",
+              "type": "translation",
+              "question": "Translate: 'Where is...?'",
+              "correctAnswer": "Gdzie jest...?",
+              "words": [
+                "Gdzie",
+                "jest",
+                "jak",
+                "tam"
+              ]
+            },
+            {
+              "id": "exDir4",
+              "type": "multipleChoice",
+              "question": "What does 'blisko' mean?",
+              "correctAnswer": "near",
+              "options": [
+                "near",
+                "far",
+                "up",
+                "down"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit2",
+      "title": "Basics 2",
+      "description": "Numbers, colors, and common words",
+      "color": "#FF9600",
+      "lessons": [
+        {
+          "id": "lesson4",
+          "unitId": "unit2",
+          "title": "Numbers 1-10",
+          "description": "Learn to count in Polish",
+          "difficulty": "beginner",
+          "xpReward": 10,
+          "requiredLessonId": "lesson3",
+          "exercises": [
+            {
+              "id": "ex13",
+              "type": "multipleChoice",
+              "question": "What is \"one\" in Polish?",
+              "correctAnswer": "jeden",
+              "options": [
+                "jeden",
+                "dwa",
+                "trzy",
+                "cztery"
+              ]
+            },
+            {
+              "id": "ex14",
+              "type": "matching",
+              "question": "Match the numbers",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "pięć",
+                  "english": "5"
+                },
+                {
+                  "polish": "sześć",
+                  "english": "6"
+                },
+                {
+                  "polish": "siedem",
+                  "english": "7"
+                }
+              ]
+            },
+            {
+              "id": "ex15",
+              "type": "multipleChoice",
+              "question": "What is \"ten\" in Polish?",
+              "correctAnswer": "dziesięć",
+              "options": [
+                "dziesięć",
+                "dziewięć",
+                "osiem",
+                "siedem"
+              ]
+            },
+            {
+              "id": "ex16",
+              "type": "translation",
+              "question": "Translate: \"three\"",
+              "correctAnswer": "trzy",
+              "words": [
+                "jeden",
+                "dwa",
+                "trzy",
+                "cztery"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson5",
+          "unitId": "unit2",
+          "title": "Colors",
+          "description": "Learn basic colors in Polish",
+          "difficulty": "beginner",
+          "xpReward": 10,
+          "requiredLessonId": "lesson4",
+          "exercises": [
+            {
+              "id": "ex17",
+              "type": "multipleChoice",
+              "question": "What is \"red\" in Polish?",
+              "correctAnswer": "czerwony",
+              "options": [
+                "czerwony",
+                "niebieski",
+                "zielony",
+                "żółty"
+              ]
+            },
+            {
+              "id": "ex18",
+              "type": "matching",
+              "question": "Match the colors",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "niebieski",
+                  "english": "blue"
+                },
+                {
+                  "polish": "zielony",
+                  "english": "green"
+                },
+                {
+                  "polish": "biały",
+                  "english": "white"
+                }
+              ]
+            },
+            {
+              "id": "ex19",
+              "type": "multipleChoice",
+              "question": "What does \"czarny\" mean?",
+              "correctAnswer": "black",
+              "options": [
+                "black",
+                "white",
+                "yellow",
+                "pink"
+              ]
+            },
+            {
+              "id": "ex20",
+              "type": "translation",
+              "question": "Translate: \"yellow\"",
+              "correctAnswer": "żółty",
+              "words": [
+                "czerwony",
+                "żółty",
+                "różowy",
+                "brązowy"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson6",
+          "unitId": "unit2",
+          "title": "Common Words",
+          "description": "Essential everyday words",
+          "difficulty": "beginner",
+          "xpReward": 15,
+          "requiredLessonId": "lesson5",
+          "exercises": [
+            {
+              "id": "ex21",
+              "type": "multipleChoice",
+              "question": "What is \"water\" in Polish?",
+              "correctAnswer": "woda",
+              "options": [
+                "woda",
+                "mleko",
+                "sok",
+                "kawa"
+              ]
+            },
+            {
+              "id": "ex22",
+              "type": "matching",
+              "question": "Match the words",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "chleb",
+                  "english": "bread"
+                },
+                {
+                  "polish": "mleko",
+                  "english": "milk"
+                },
+                {
+                  "polish": "kawa",
+                  "english": "coffee"
+                }
+              ]
+            },
+            {
+              "id": "ex23",
+              "type": "multipleChoice",
+              "question": "What does \"dom\" mean?",
+              "correctAnswer": "house",
+              "options": [
+                "house",
+                "car",
+                "tree",
+                "book"
+              ]
+            },
+            {
+              "id": "ex24",
+              "type": "translation",
+              "question": "Translate: \"book\"",
+              "correctAnswer": "książka",
+              "words": [
+                "książka",
+                "stół",
+                "krzesło",
+                "okno"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit3",
+      "title": "Food & Drink",
+      "description": "Learn food and drink vocabulary",
+      "color": "#CE82FF",
+      "lessons": [
+        {
+          "id": "lesson7",
+          "unitId": "unit3",
+          "title": "Meals",
+          "description": "Breakfast, lunch, and dinner",
+          "difficulty": "beginner",
+          "xpReward": 10,
+          "requiredLessonId": "lesson6",
+          "exercises": [
+            {
+              "id": "ex25",
+              "type": "multipleChoice",
+              "question": "What is \"breakfast\" in Polish?",
+              "correctAnswer": "śniadanie",
+              "options": [
+                "śniadanie",
+                "obiad",
+                "kolacja",
+                "deser"
+              ]
+            },
+            {
+              "id": "ex26",
+              "type": "matching",
+              "question": "Match the meals",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "obiad",
+                  "english": "lunch"
+                },
+                {
+                  "polish": "kolacja",
+                  "english": "dinner"
+                },
+                {
+                  "polish": "deser",
+                  "english": "dessert"
+                }
+              ]
+            },
+            {
+              "id": "ex27",
+              "type": "multipleChoice",
+              "question": "What does \"jestem głodny\" mean?",
+              "correctAnswer": "I am hungry",
+              "options": [
+                "I am hungry",
+                "I am thirsty",
+                "I am tired",
+                "I am happy"
+              ]
+            },
+            {
+              "id": "ex28",
+              "type": "translation",
+              "question": "Translate: \"I am thirsty\"",
+              "correctAnswer": "jestem spragniony",
+              "words": [
+                "jestem",
+                "spragniony",
+                "głodny",
+                "zmęczony"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson8",
+          "unitId": "unit3",
+          "title": "Fruits",
+          "description": "Common fruit names",
+          "difficulty": "beginner",
+          "xpReward": 10,
+          "requiredLessonId": "lesson7",
+          "exercises": [
+            {
+              "id": "ex29",
+              "type": "multipleChoice",
+              "question": "What is \"apple\" in Polish?",
+              "correctAnswer": "jabłko",
+              "options": [
+                "jabłko",
+                "banan",
+                "pomarańcza",
+                "gruszka"
+              ]
+            },
+            {
+              "id": "ex30",
+              "type": "matching",
+              "question": "Match the fruits",
+              "correctAnswer": "all",
+              "pairs": [
+                {
+                  "polish": "truskawka",
+                  "english": "strawberry"
+                },
+                {
+                  "polish": "winogrono",
+                  "english": "grape"
+                },
+                {
+                  "polish": "arbuz",
+                  "english": "watermelon"
+                }
+              ]
+            },
+            {
+              "id": "ex31",
+              "type": "multipleChoice",
+              "question": "What does \"banan\" mean?",
+              "correctAnswer": "banana",
+              "options": [
+                "banana",
+                "orange",
+                "pear",
+                "lemon"
+              ]
+            },
+            {
+              "id": "ex32",
+              "type": "translation",
+              "question": "Translate: \"orange\"",
+              "correctAnswer": "pomarańcza",
+              "words": [
+                "jabłko",
+                "pomarańcza",
+                "cytryna",
+                "gruszka"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
